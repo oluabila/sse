@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<title>Multi-Paged Website</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min1.css}" href="../static/vendor/bootstrap/css/bootstrap.min1.css">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/mainwelcome.css}" href="../static/css/mainwelcome.css">
+	</head>
+	<body>
+		<ul class="nav nav-tabs">
+		  <li role="presentation" class="active"><a href="/welcome" th:href="@{/welcome}">Home</a></li>
+			<li role="presentation"><a href="/allmodules"  th:href="@{/allmodules}">All Modules</a></li>
+		  <li role="presentation"><a href="/mymodules"  th:href="@{/mymodules}">My Modules</a></li>
+		  <li role="presentation"><a href="/statistics"  th:href="@{/statistics}">Statistics</a></li>
+			<li role="presentation" ><a href="/payment"  th:href="@{/payment}">My Payments</a></li>
+			<li role="presentation" th:align="right" style="position:absolute;top:0;right:0;"><a href="/logout" th:href="@{/logout}">Log out</a></li>
+		</ul>
+		<header id="showcase">
+
+			<div id="form"><td th:text="${atr_name}"></td></th:text><h1>Welcome to the University of Springfield University</h1></div>
+			<div class="form"><p>The Department of Computer Science and Technology (known as the Computer Science School) is an academic department within the University of Springfield that encompasses Computer Science, along with many aspects of Technology, Engineering and Mathematics. </p>
+			</div>
+			<a href="#section-a" class="button">Read More</a>
+		</header>
+		
+		<section id="section-a">
+			<p>The Department undertakes research in a broad range of subjects. It has an open and collaborative culture, supporting revolutionary fundamental computer science research, strong cross-cutting collaborations internally and externally, and ideas which transform computing outside the University. Current research areas include bioinformatics, computer architecture, computer vision, distributed systems, graphics and human-computer interaction, logic and semantics, machine learning, natural language processing, networking and wireless communication, operating systems and virtualization, programming, security, and sustainable computing.</p>
+		</section>
+	</body>
+</html>

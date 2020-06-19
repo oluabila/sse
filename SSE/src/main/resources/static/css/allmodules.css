@@ -1,0 +1,42 @@
+
+button{
+	font-size: 18px;
+	text-decoration:none;
+	color:#000000;
+	border:#000000 1px solid;
+	padding:10px 20px;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+body{
+	text-align: center;
+	margin:0;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 17px;
+}
+thead {
+	background: #f5e8d0;
+}
+td,th {
+	padding:5px;
+	border:1px solid #333;
+}
+tbody tr:nth-child(even) {
+	background: #f0f0f0;
+}
+.enrolling{
+	line-height: 50px;
+  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #666;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}

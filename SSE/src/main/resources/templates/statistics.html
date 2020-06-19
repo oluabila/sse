@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min1.css}" href="../static/vendor/bootstrap/css/bootstrap.min1.css">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/mainwelcome.css}" href="../static/css/mainwelcome.css">
+		<script  src="https://cdn.jsdelivr.net/npm/vega@5.9.0/build/vega.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2/build/vega-lite.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1/build/vega-embed.js" ></script>
+
+		<script src="/js/save.js" th:src="@{/js/save.js}"> </script>
+	</head>
+	<body>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="/welcome" th:href="@{/welcome}">Home</a></li>
+			<li role="presentation"><a href="/allmodules"  th:href="@{/allmodules}">All Modules</a></li>
+			<li role="presentation"><a href="/mymodules"  th:href="@{/mymodules}">My Modules</a></li>
+			<li role="presentation" class="active"><a href="/statistics"  th:href="@{/statistics}">Statistics</a></li>
+			<li role="presentation" ><a href="/payment"  th:href="@{/payment}">My Payments</a></li>
+			<li role="presentation" th:align="right" style="position:absolute;top:0;right:0;"><a href="/logout" th:href="@{/logout}">Log out</a></li>
+		</ul>
+		<div id="vis" align="center"></div>
+		<div><button id="btnExportToCsv" type="button" class="button" align="center">Export current stat to csv format</button></div>
+		<div><button onclick="trElems();">Show current statistics </button> </div>
+		<table border="1" cellpadding="5" id="dataTable" >
+			<caption><h2>Statistics</h2></caption>
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Sex</th>
+				<th>Nationality</th>
+				<th>Date of birth</th>
+			</tr>
+			</thead>
+			<tr th:each="message: ${messages}">
+				<td th:text="${message.name}"></td>
+				<td th:text="${message.surname}"></td>
+				<td class ="sex" th:text="${message.sex}"></td>
+				<td th:text="${message.nationality}"></td>
+				<td th:text="${message.date_of_birth}"></td>
+			</tr>
+		</table>
+		<script>
+			const dataTable = document.getElementById("dataTable");
+			const btnExportToCsv = document.getElementById("btnExportToCsv");
+
+			btnExportToCsv.addEventListener("click", () => {
+				const exporter = new TableCSVExporter(dataTable);
+				const csvOutput = exporter.convertToCSV();
+				const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+				const blobUrl = URL.createObjectURL(csvBlob);
+				const anchorElement = document.createElement("a");
+
+				anchorElement.href = blobUrl;
+				anchorElement.download = "stat.csv";
+				anchorElement.click();
+
+				setTimeout(() => {
+					URL.revokeObjectURL(blobUrl);
+				}, 500);
+			});
+		</script>
+		<script type="text/javascript" th:src="@{/js/stats.js}"> </script>
+	</body>
+</html>

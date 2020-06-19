@@ -1,0 +1,53 @@
+Team by Liliia Naumeiko and Olya Bila
+
+Meeting: 1
+Date:10.02
+Group leader: Olya
+
+Task and roles: As Lilia missed both lectures because of volleyball tournament
+my task was to explain a task which was given by lecturer, some special 
+requirements and deadlines. Lilia's task was to start our work on github to create 
+repository and to begin writing of meeting diary. 
+
+Deadlines: 13.02
+
+Meeting: 2
+Date:14.02
+Group leader: Liliia
+
+Task and roles: Both of us working with preparing working environment. We installed IntelliJ IDEA, Maven and checked the correct version of Java. All that tips we did through Spring-boot tutorial, but we obtained one mistake, which was the same for both of us. The error
+is: 
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+Reason: Failed to determine a suitable driver class.
+We were trying to do our best to solve that problem.
+
+Deadlines: 20.02
+
+Meeting: 3
+Date:20.02
+Group leader: Liliia
+
+Task and roles: Our group meeting took place after the lecture.
+During the lecture we asked teacher for the help with solving our problems, she gave us needed recommendations. 
+Task for Olya: reinstall Java as she has a mismatch of Java versions, as spring-boot plugin cannot work properly.
+The solution for the determination a suitable driver class is to fill 'application.properties' with an access to localhost and defining spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver.
+Task for the next meeting: create the structure of database in MySql and inmplement the entities in IntelliJ.
+Deadlines: 22.02
+
+Meeting: 4
+Date:23.02
+Group leader: Olya
+
+Task and roles: As we understood how to work with spring boot our next step was to read requirement for projects and start to work. We created database 
+and started to create project. Task for the next: create te first page login(back-end and front-end).
+Deadline: 26.02
+
+Meeting: 5 
+Date:28.02
+Group leader: Liliia
+
+Task and roles: We separated our roles in the project. 
+As we have only two people in our group, we decided that Olya should be responsible for front-end and Liliia should be responsible for back-end.
+We will work together through Git hub and collaborate with each other to achieve success.
+We created first page login. When somebody inputs his credentials, the checking with Data base is occured and then there are two possible variants: track User to "Welcome" page or alert an "error".
+Task for the next meeting: create other working pages of the webapp as /welcome /register, /mymodules, /allmodules, /mypayments and /statistics.
